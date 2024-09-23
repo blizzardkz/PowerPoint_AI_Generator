@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>catalog</category>
+        <client_script><![CDATA[//Function that creates the presentation
+function createPresentation() {
+    //Get inputs
+    var title = document.getElementById("title");
+    var name = document.getElementById("name");
+    var nos = document.getElementById("nos");
+
+    var pptx = new PptxGenJS();
+    pptx.layout = "LAYOUT_WIDE";
+
+    //Basic Slide Template
+    pptx.defineSlideMaster({
+        title: "BASIC_SLIDE",
+        background: {
+            color: "FFFFFF"
+        },
+        objects: [
+
+            {
+                image: {
+                    path: "https://static.vecteezy.com/system/resources/previews/008/680/961/large_2x/abstract-technology-background-free-vector.jpg",
+                    x: 0,
+                    y: 0,
+                    w: "100%",
+                    h: "100%",
+                    transparency: 80
+                }
+            },
+
+
+        ],
+        slideNumber: {
+            x: 0.3,
+            y: "90%"
+        }
+    });
+    //Title Slide Template
+    pptx.defineSlideMaster({
+        title: "TITLE_SLIDE",
+        background: {
+            color: "FFFFFF"
+        },
+        objects: [{
+
+
+                rect: {
+                    x: 0.0,
+                    y: 5.3,
+                    w: "100%",
+                    h: 0.75,
+                    fill: {
+                        color: "F1F1F1"
+                    }
+                }
+            },
+            {
+                image: {
+                    path: "https://media.licdn.com/dms/image/C4E0BAQEWw6wMz5uySA/company-logo_200_200/0/1671789381244/happeningit_logo?e=1726099200&v=beta&t=5Kk40v-aLNuZrlppZX5NgK0WN90lp5J4kFxVjx4tK2c",
+                    x: 1,
+                    y: 1
+                }
+            },
+            {
+                image: {
+                    path: "https://static.vecteezy.com/system/resources/previews/008/680/961/large_2x/abstract-technology-background-free-vector.jpg",
+                    x: 0,
+                    y: 0,
+                    w: "100%",
+                    h: "100%",
+                    transparency: 80
+                }
+            },
+            {
+                text: {
+                    text: title.value,
+                    options: {
+                        x: (10 - 5.5) / 2,
+                        y: (7.5 - 0.75) / 2,
+                        w: 5.5,
+                        h: 0.75,
+                        fontSize: 60,
+                        fontFace: "Arial",
+                        bold: true
+                    }
+                }
+            },
+            {
+                text: {
+                    text: name.value,
+                    options: {
+                        x: (10 - 5.5) / 2,
+                        y: 5.5,
+                        w: 5.5,
+                        h: 0.75,
+                        fontSize: 20,
+                        fontFace: "Arial"
+                    }
+                }
+            },
+
+        ],
+        slideNumber: {
+            x: 0.3,
+            y: "90%"
+        },
+    });
+
+	//Add Title Slide to PowerPoint
+    var masterslide = pptx.addSlide({
+        masterName: "TITLE_SLIDE"
+    });
+
+	//Add Basic Slide to PowerPoint (Will have AI implemented in future versions, AI answers will be in JSON format)
+    function addBasicSlide() {
+        var templateslide = pptx.addSlide({
+            masterName: "BASIC_SLIDE"
+        });
+    }
+    for (var i = 1; i <= parseInt(nos.value); i++) {
+        addBasicSlide();
+    }
+
+
+    // Save and Download the presentation
+    pptx.writeFile(title.value);
+
+}
+
+/*document.getElementById("nos").addEventListener("input", function(){
+	var container = document.getElementById("promptContainer");
+	var numberOfPrompts = parseInt(this.value);
+    
+	//Clear existing prompt inputs
+	container.innerHTML = "";
+
+	//Create new prompt inputs based on the entered number
+	for(var i = 0; i < numberOfPrompts; i++){
+		var label = document.createElement("label");
+		//var input = document.createElement("input");
+		var textArea = document.createElement("textarea");
+		var inputWrapper = document.createElement('div');
+
+		if (i % 4 === 0) {
+            var divContainer = document.createElement('div');
+            divContainer.classList.add('input-group');
+            container.appendChild(divContainer);
+        }
+        
+
+		inputWrapper.classList.add('input-wrapper');
+		label.textContent = "AI Prompt for Slide " + (i + 1) + "(Will work in version 2.0 when AI is available)";
+		textArea.rows = 4;
+		textArea.cols = 50;
+		
+
+		inputWrapper.appendChild(label);
+		inputWrapper.appendChild(textArea);
+		divContainer.appendChild(inputWrapper);
+		
+
+	}
+
+});*/
+    /*   // Add another slide and chatgpt fills it in
+       var question = new GlideAjax("ChatGPT");
+       question.addParam('sysparm_name', 'askChatGPT');
+       question.addParam('message', 'create a small text');
+       question.getXML(ajaxResponse);
+       question.getXMLAnswer(function(response) {
+           // Response handling logic
+           if (response !== null) {
+               handleResponse(response);
+           } else {
+               waitForResponse(question);
+           }
+       });
+
+
+
+       var slide2 = pptx.addSlide();
+
+       function ajaxResponse(serverResponse) {
+           var answer = serverResponse.responseXML.documentElement.getAttribute("answer");
+           alert(answer);
+
+           slide2.addText(answer, {
+               x: 0.5,
+               y: 0.5,
+               fontSize: 24,
+               color: '363636'
+           });
+
+       }
+
+       function waitForResponse(glideAjaxInstance) {
+           var interval = setInterval(function() {
+               glideAjaxInstance.getXMLAnswer(function(response) {
+                   if (response !== null) {
+                       clearInterval(interval);
+                       handleResponse(response);
+                   }
+               });
+           }, 100); // Check every 100 milliseconds
+       }
+
+       function handleResponse(response) {
+           // Your logic to handle the response
+           var answer = response.responseXML.documentElement.getAttribute("answer");
+           alert(answer);
+
+           slide2.addText(answer, {
+               x: 0.5,
+               y: 0.5,
+               fontSize: 24,
+               color: '363636'
+           });
+
+           // Save the presentation
+           pptx.writeFile('SamplePresentation');
+
+       }*/
+
+//Creation of a slide with a chart
+/*	var chartSlide = pptx.addSlide({
+            masterName: "BASIC_SLIDE"
+        });
+	var dataChart = [
+  {
+    name: "Actual Sales",
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    values: [1500, 4600, 5156, 3167, 8510, 8009, 6006, 7855, 12102, 12789, 10123, 15121],
+  },
+  {
+    name: "Projected Sales",
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    values: [1000, 2600, 3456, 4567, 5010, 6009, 7006, 8855, 9102, 10789, 11123, 12121],
+  },
+];
+
+chartSlide.addChart(pptx.ChartType.line, dataChart, { x: 1, y: 1, w: 8, h: 4 })*/
+
+]]></client_script>
+        <description>This UI Page generates powerpoints.</description>
+        <direct>false</direct>
+        <endpoint>x_1127653_powerpoi_PPT Gen UI Page.do</endpoint>
+        <html><![CDATA[<html>
+<head>
+   
+    <title>Create PowerPoint with JavaScript</title>
+	<!-- If powerpoints are not being generated it means a new version is out and you need to update the link -->
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+    <style>
+		h4{
+			font-weight: bold;
+		}
+        .container{
+			display: inline-block;
+		}
+		.promptContainer{
+			display: inline-block;
+		}
+		.divContainer{
+			display: flex;
+		}
+		
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+			margin-top: 20px;
+			float: left;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+		.newInput {
+			margin: 5px;
+		}
+		
+		.input-wrapper {
+            margin-left: 10px;
+			margin-top: 10px;
+        }
+		label {
+            display: block;
+            margin: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+	<div>
+		<h1>PowerPoint Generator</h1>
+		<h5>AI will be available in a future version.</h5>
+		<div class="staticInputs">
+			<h4>Determine Title Slide</h4>
+			<label>Title:</label>
+			<input class="newInput" id="title" type="text" placeholder="Title"></input>
+		</div>
+		<div class="staticInputs">
+			<label>Name:</label>
+			<input class="newInput" id="name" type="text" placeholder="Your Name"></input>
+		</div>
+		<div class="staticInputs">
+			<h4>Determine Other Slides</h4>
+			<label>Number of Slides:</label>
+			<input class="newInput" id="nos" type="number" placeholder="0"></input>
+		</div>
+		<div class="promptContainer" id="promptContainer">
+		<label>Describe your presentation topic.</label>
+		<textarea rows="4" cols="50"></textarea>
+		</div>
+	</div>
+    <div>
+        <button class="btn" onclick="createPresentation()">Create PowerPoint</button>
+    </div>
+</div>
+
+
+    
+</body>
+</html>
+]]></html>
+        <name>PPT Gen UI Page</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-11 09:48:28</sys_created_on>
+        <sys_id>8ae33f5c47b2021026d9f8f4726d43ee</sys_id>
+        <sys_mod_count>96</sys_mod_count>
+        <sys_name>PPT Gen UI Page</sys_name>
+        <sys_package display_value="PowerPoint Creator" source="x_1127653_powerpoi">fcdcd3044732021026d9f8f4726d43a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PowerPoint Creator">fcdcd3044732021026d9f8f4726d43a1</sys_scope>
+        <sys_update_name>sys_ui_page_8ae33f5c47b2021026d9f8f4726d43ee</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-13 12:11:45</sys_updated_on>
+    </sys_ui_page>
+</record_update>

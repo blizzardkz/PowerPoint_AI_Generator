@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <attributes>{labelCacheCleanUpExecuted=true}</attributes>
+        <authored_on_release_version>25000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority/>
+        <ih_action>false</ih_action>
+        <internal_name>attach_powerpoint</internal_name>
+        <label_cache/>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Attach PowerPoint</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <state>draft</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-11 08:45:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e5662b9447b2021026d9f8f4726d4301</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Attach PowerPoint</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="PowerPoint Creator" source="x_1127653_powerpoi">fcdcd3044732021026d9f8f4726d43a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PowerPoint Creator">fcdcd3044732021026d9f8f4726d43a1</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_e5662b9447b2021026d9f8f4726d4301</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-11 08:45:27</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_hub_action_input action="delete_multiple" query="model=e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_hub_action_output action="delete_multiple" query="model=e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_e5662b9447b2021026d9f8f4726d4301"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=e5662b9447b2021026d9f8f4726d4301"/>
+</record_update>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="PowerPoint Creator">0a6d1f404732021026d9f8f4726d438c</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>NEW</link_type>
+        <map_page/>
+        <mobile_title>Create New</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>sc_catalog</name>
+        <order>2</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 13:27:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5a6d13444732021026d9f8f4726d43e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create New</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="PowerPoint Creator" source="x_1127653_powerpoi">fcdcd3044732021026d9f8f4726d43a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PowerPoint Creator">fcdcd3044732021026d9f8f4726d43a1</sys_scope>
+        <sys_update_name>sys_app_module_5a6d13444732021026d9f8f4726d43e7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 13:27:42</sys_updated_on>
+        <timeline_page/>
+        <title>Create New</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PowerPoint Creator">fcdcd3044732021026d9f8f4726d43a1</application>
+        <file_path/>
+        <instance_id>ab74a9131be98e1878c7cb7b234bcbf0</instance_id>
+        <instance_name>dev259963</instance_name>
+        <name>sys_app_module_5a6d13444732021026d9f8f4726d43e7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="PowerPoint Creator">0a6d1f404732021026d9f8f4726d438c</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>NEW</link_type><map_page/><mobile_title>Create New</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>sc_catalog</name><order>2</order><override_menu_roles>false</override_menu_roles><query/><report/><require_confirmation>true</require_confirmation><roles/><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-06-10 13:27:42</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>5a6d13444732021026d9f8f4726d43e7</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Create New</sys_name><sys_overrides/><sys_package display_value="PowerPoint Creator" source="x_1127653_powerpoi">fcdcd3044732021026d9f8f4726d43a1</sys_package><sys_policy/><sys_scope display_value="PowerPoint Creator">fcdcd3044732021026d9f8f4726d43a1</sys_scope><sys_update_name>sys_app_module_5a6d13444732021026d9f8f4726d43e7</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-06-10 13:27:42</sys_updated_on><timeline_page/><title>Create New</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-1261797148</payload_hash>
+        <record_name>Create New</record_name>
+        <reverted_from/>
+        <source>f0dcd3044732021026d9f8f4726d43a6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 13:27:42</sys_created_on>
+        <sys_id>d66d13444732021026d9f8f4726d43e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1900255495d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 13:27:42</sys_updated_on>
+        <type>Module</type>
+        <update_guid>da6d13445c32021052c78da7c489e9e8</update_guid>
+        <update_guid_history>da6d13445c32021052c78da7c489e9e8:-1261797148</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Create New">e6c22f0c4732021026d9f8f4726d43fc</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 13:51:12</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>10c14c30e8ec4cd89abfc600a1f12cb9</sys_id>
+        <sys_metadata>5a6d13444732021026d9f8f4726d43e7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create New</sys_name>
+        <sys_package display_value="PowerPoint Creator" source="x_1127653_powerpoi">fcdcd3044732021026d9f8f4726d43a1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PowerPoint Creator">fcdcd3044732021026d9f8f4726d43a1</sys_scope>
+        <sys_scope_delete display_value="">45d5d8cd003a41f8b2856eaf9808bca9</sys_scope_delete>
+        <sys_update_name>sys_app_module_5a6d13444732021026d9f8f4726d43e7</sys_update_name>
+        <sys_update_version display_value="sys_app_module_5a6d13444732021026d9f8f4726d43e7">d66d13444732021026d9f8f4726d43e9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 13:51:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
